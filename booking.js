@@ -1,4 +1,4 @@
-:::writing{variant="document" id="58271"} /* ══════════════════════════════════════ booking.js — WhatsApp Booking System ══════════════════════════════════════ */
+/* ══════════════════════════════════════ booking.js — WhatsApp Booking System ══════════════════════════════════════ */
 (function () {
 const form = document.getElementById('bookingForm'); const submitBtn = document.getElementById('submitBtn'); const btnLabel = submitBtn?.querySelector('.btn-label'); const btnSpinner = submitBtn?.querySelector('.btn-spinner');
 if (!form) return;
@@ -131,4 +131,4 @@ btnLabel.hidden = false;
 
 submitBtn.disabled = false;
 });
-})(); :::
+})();
