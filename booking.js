@@ -121,7 +121,7 @@ Please contact me to confirm my booking.`;
 const whatsappURL =
   `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(whatsappMessage)}`;
 
-alert(whatsappURL);
+window.location.href = whatsappURL;
 
 btnSpinner.hidden = true;
 
