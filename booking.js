@@ -1,5 +1,6 @@
 /* ══════════════════════════════════════ booking.js — WhatsApp Booking System ══════════════════════════════════════ */
 (function () {
+  alert("BOOKING JS LOADED");
 const form = document.getElementById('bookingForm'); const submitBtn = document.getElementById('submitBtn'); const btnLabel = submitBtn?.querySelector('.btn-label'); const btnSpinner = submitBtn?.querySelector('.btn-spinner');
 if (!form) return;
 // Studio WhatsApp Number const WHATSAPP_NUMBER = "919582501552";
