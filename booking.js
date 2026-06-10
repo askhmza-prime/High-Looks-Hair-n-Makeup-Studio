@@ -65,6 +65,7 @@ rules[key].el?.addEventListener('input', () => {
 });
 // ── SUBMIT TO WHATSAPP ─────────────
 form.addEventListener('submit', function (e) {
+  alert("FORM SUBMITTED");
 e.preventDefault();
 
 const allValid = Object.keys(rules)
