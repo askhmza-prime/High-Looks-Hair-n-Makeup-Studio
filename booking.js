@@ -65,11 +65,11 @@ if (!time) {
   return;
 }
 
-const whatsappNumber = "919582501552";
+const whatsappNumber = "918938053141";
 
 const message =
 
-`🌸 NEW APPOINTMENT REQUEST 🌸
+`NEW APPOINTMENT REQUEST
 
 Name: ${name}
 
