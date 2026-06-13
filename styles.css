@@ -245,72 +245,46 @@ ul { list-style: none; }
 }
 
 /* ── BIG BLURRED LOGO WATERMARK ─────────────────── */
-.hero-logo-watermark {
-  position: absolute;
-  inset: 0;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-
-  justify-content: flex-start;
-
-  padding-top: 2rem;
-
-  pointer-events: none;
-  z-index: 1;
-  gap: 0;
+.hero-logo-watermark{
+  position:absolute;
+  inset:0;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  pointer-events:none;
+  z-index:1;
+  overflow:hidden;
 }
 
-.watermark-rds {
-  font-family: var(--ff-display);
+.hero-watermark-logo{
+  width:min(1400px,140vw);
+  opacity:0.08;
 
-  font-size: clamp(12rem, 28vw, 30rem);
+  filter:
+    blur(2px)
+    drop-shadow(0 0 40px rgba(201,169,110,.15));
 
-  font-weight: 700;
-  font-style: italic;
+  transform:
+    translateY(-30px)
+    scale(1.15);
 
-  color: rgba(201, 169, 110, 0.045);
+  user-select:none;
 
-  letter-spacing: -0.04em;
-
-  line-height: 0.8;
-
-  filter: blur(3px);
-
-  user-select: none;
-
-  transform: translateY(-3rem);
-
-  animation: watermarkDrift 30s ease-in-out infinite alternate;
+  animation:logoFloat 18s ease-in-out infinite alternate;
 }
 
-.watermark-makeup {
-  font-family: var(--ff-mono);
-  font-size: clamp(2rem, 6vw, 6rem);
-  font-weight: 500;
-  color: rgba(201, 169, 110, 0.03);
-  letter-spacing: 0.8em;
-  line-height: 1;
-  filter: blur(2px);
-  user-select: none;
-   transform: translateY(-2rem);
-}
+@keyframes logoFloat{
+  from{
+    transform:
+      translateY(-30px)
+      scale(1.15);
+  }
 
-.watermark-studio {
-  font-family: var(--ff-mono);
-  font-size: clamp(1rem, 2vw, 2rem);
-  font-weight: 400;
-  color: rgba(201, 169, 110, 0.025);
-  letter-spacing: 1em;
-  line-height: 1;
-  filter: blur(2px);
-  user-select: none;
-   transform: translateY(-1rem);
-}
-
-@keyframes watermarkDrift {
-  from { transform: scale(1) translateY(0); opacity: 0.8; }
-  to   { transform: scale(1.04) translateY(-12px); opacity: 1; }
+  to{
+    transform:
+      translateY(-50px)
+      scale(1.20);
+  }
 }
 
 /* ── HERO CONTENT ────────────────────────────────── */
