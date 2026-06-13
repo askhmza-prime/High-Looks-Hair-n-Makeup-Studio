@@ -545,8 +545,7 @@ ul { list-style: none; }
 }
 /* Summer offer — warm cream/orange */
 .insta-img-6 {
-  background: 
-    linear-gradient(135deg, #f5e6c0 0%, #f0d090 30%, #e8b060 65%, #d4903a 100%);
+  background: url('images/summer-offer.jpg')center center / cover no-repeat;
 }
 
 /* Silhouette / pose art layered on top */
