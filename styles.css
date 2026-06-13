@@ -251,7 +251,11 @@ ul { list-style: none; }
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
+
+  justify-content: flex-start;
+
+  padding-top: 2rem;
+
   pointer-events: none;
   z-index: 1;
   gap: 0;
@@ -259,37 +263,49 @@ ul { list-style: none; }
 
 .watermark-rds {
   font-family: var(--ff-display);
-  font-size: clamp(8rem, 22vw, 22rem);
+
+  font-size: clamp(12rem, 28vw, 30rem);
+
   font-weight: 700;
   font-style: italic;
-  color: rgba(201, 169, 110, 0.07);
-  letter-spacing: -0.02em;
-  line-height: 0.85;
-  filter: blur(2px);
+
+  color: rgba(201, 169, 110, 0.045);
+
+  letter-spacing: -0.04em;
+
+  line-height: 0.8;
+
+  filter: blur(3px);
+
   user-select: none;
-  animation: watermarkDrift 25s ease-in-out infinite alternate;
+
+  transform: translateY(-3rem);
+
+  animation: watermarkDrift 30s ease-in-out infinite alternate;
 }
 
 .watermark-makeup {
   font-family: var(--ff-mono);
-  font-size: clamp(1.5rem, 5vw, 5rem);
+  font-size: clamp(2rem, 6vw, 6rem);
   font-weight: 500;
-  color: rgba(201, 169, 110, 0.05);
-  letter-spacing: 0.6em;
+  color: rgba(201, 169, 110, 0.03);
+  letter-spacing: 0.8em;
   line-height: 1;
-  filter: blur(1px);
+  filter: blur(2px);
   user-select: none;
+   transform: translateY(-2rem);
 }
 
 .watermark-studio {
   font-family: var(--ff-mono);
-  font-size: clamp(0.8rem, 2vw, 2rem);
+  font-size: clamp(1rem, 2vw, 2rem);
   font-weight: 400;
-  color: rgba(201, 169, 110, 0.04);
-  letter-spacing: 0.8em;
+  color: rgba(201, 169, 110, 0.025);
+  letter-spacing: 1em;
   line-height: 1;
-  filter: blur(1px);
+  filter: blur(2px);
   user-select: none;
+   transform: translateY(-1rem);
 }
 
 @keyframes watermarkDrift {
