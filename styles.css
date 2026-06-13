@@ -265,7 +265,7 @@ ul { list-style: none; }
     drop-shadow(0 0 40px rgba(201,169,110,.15));
 
   transform:
-    translateY(-30px)
+    translateY(-80px)
     scale(1.15);
 
   user-select:none;
@@ -276,13 +276,13 @@ ul { list-style: none; }
 @keyframes logoFloat{
   from{
     transform:
-      translateY(-30px)
+      translateY(-80px)
       scale(1.15);
   }
 
   to{
     transform:
-      translateY(-50px)
+      translateY(-100px)
       scale(1.20);
   }
 }
