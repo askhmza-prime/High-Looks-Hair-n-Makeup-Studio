@@ -525,21 +525,21 @@ ul { list-style: none; }
 
 /* Bridal look gradients — rich, realistic tones */
 .insta-img-1 {
-  background: 
+  background: url('images/bridal.jpg');
     radial-gradient(ellipse at 30% 20%, rgba(180,60,60,0.4) 0%, transparent 50%),
     radial-gradient(ellipse at 70% 80%, rgba(120,30,60,0.5) 0%, transparent 55%),
     linear-gradient(160deg, #3d0a1a 0%, #7a1830 30%, #c44060 55%, #9c2040 75%, #4a0f20 100%);
 }
 /* Deep red lehenga bridal */
 .insta-img-2 {
-  background: 
+  background: url('images/bridal-downlook.jpg');
     radial-gradient(ellipse at 50% 30%, rgba(200,160,80,0.25) 0%, transparent 45%),
     radial-gradient(ellipse at 20% 70%, rgba(80,20,40,0.6) 0%, transparent 50%),
     linear-gradient(145deg, #1a0a10 0%, #5a1520 25%, #9a2535 50%, #7a3050 70%, #2d0f1a 100%);
 }
 /* Smiling bridal with nose ring */
 .insta-img-3 {
-  background: 
+  background: url('images/bridal2-frontlook.jpg');
     radial-gradient(ellipse at 60% 25%, rgba(210,170,90,0.3) 0%, transparent 40%),
     radial-gradient(ellipse at 30% 75%, rgba(100,40,20,0.5) 0%, transparent 50%),
     linear-gradient(155deg, #2a1008 0%, #7a3015 28%, #c06030 55%, #9a4820 72%, #3a1508 100%);
@@ -551,14 +551,14 @@ ul { list-style: none; }
 }
 /* Party look 1 — silver/white lehenga */
 .insta-img-5 {
-  background: 
+  background: url('images/bridal2-downlook.jpg');
     radial-gradient(ellipse at 40% 30%, rgba(220,200,200,0.3) 0%, transparent 45%),
     radial-gradient(ellipse at 70% 80%, rgba(60,20,80,0.4) 0%, transparent 50%),
     linear-gradient(150deg, #181020 0%, #3a1840 30%, #6a3060 55%, #8a5070 75%, #4a2050 100%);
 }
 /* Party look 2 — teal/gold */
 .insta-img-6 {
-  background: 
+  background: url('images/make-up.jpg');
     radial-gradient(ellipse at 30% 25%, rgba(180,140,60,0.3) 0%, transparent 45%),
     radial-gradient(ellipse at 65% 75%, rgba(20,60,60,0.5) 0%, transparent 50%),
     linear-gradient(150deg, #0a1e1e 0%, #1a4a3a 28%, #2e7060 52%, #4a9080 70%, #1a3530 100%);
