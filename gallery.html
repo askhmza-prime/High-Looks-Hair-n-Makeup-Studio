@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Gallery · RD's Makeup Studio · Moradabad</title>
+  <meta name="description" content="Browse bridal and party transformations by Nidhi Jain at RD's Makeup Studio, Civil Lines Moradabad." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&family=DM+Sans:wght@300;400;500;600&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" href="pages.css" />
+</head>
+<body>
+
+  <!-- ─── NAV ──────────────────────────────────────── -->
+  <header id="navbar">
+    <div class="nav-inner">
+      <a href="index.html" class="logo">
+        <div class="logo-rd">RD's</div>
+        <span class="logo-text">Makeup Studio</span>
+      </a>
+      <nav class="nav-links" id="navLinks">
+        <a href="index.html">Home</a>
+        <a href="services.html">Services</a>
+        <a href="gallery.html" class="nav-active-page">Gallery</a>
+        <a href="booking.html">Booking</a>
+        <a href="index.html#contact">Contact</a>
+        <a href="tel:+918938053141" class="nav-cta">Call Now</a>
+      </nav>
+      <button class="hamburger" id="hamburger" aria-label="Toggle menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <!-- ─── PAGE HERO ────────────────────────────────── -->
+  <section class="page-hero">
+    <div class="ph-bg">
+      <div class="hero-orb orb1"></div>
+      <div class="hero-orb orb2"></div>
+    </div>
+    <div class="ph-content container">
+      <p class="hero-eyebrow">RD's Makeup Studio · Civil Lines, Moradabad</p>
+      <h1 class="ph-title">Our <em>Gallery</em></h1>
+      <p class="ph-sub">Real brides. Real transformations. Every look crafted with love by Nidhi Jain.</p>
+    </div>
+  </section>
+
+  <!-- ─── FILTER BAR ───────────────────────────────── -->
+  <div class="filter-bar">
+    <div class="container filter-inner">
+      <button class="filter-btn active" data-filter="all">All</button>
+      <button class="filter-btn" data-filter="bridal">Bridal</button>
+      <button class="filter-btn" data-filter="party">Party &amp; Occasion</button>
+      <button class="filter-btn" data-filter="offer">Offers</button>
+      <button class="filter-btn" data-filter="video">Videos</button>
+    </div>
+  </div>
+
+  <!-- ─── GALLERY GRID ─────────────────────────────── -->
+  <main class="section gallery-main">
+    <div class="container">
+      <div class="gallery-grid" id="galleryGrid">
+
+        <!-- 1: Bridal full look (red lehenga) -->
+        <div class="gallery-cell" data-cat="bridal"
+             data-src="images/bridal.jpg"
+             data-label="Bridal Makeup"
+             data-desc="Full bridal transformation — red lehenga look by Nidhi Jain">
+          <div class="gc-img" style="background-image:url('images/bridal.jpg')"></div>
+          <div class="gc-overlay">
+            <span class="gc-label">Bridal Makeup</span>
+            <span class="gc-cat">Bridal</span>
+          </div>
+          <button class="gc-zoom" aria-label="View fullscreen">⤢</button>
+        </div>
+
+        <!-- 2: Bridal downlook (maroon) — featured wide -->
+        <div class="gallery-cell gallery-cell--wide" data-cat="bridal"
+             data-src="images/bridal-downlook.jpg"
+             data-label="Bridal Down Look"
+             data-desc="Classic bridal look with traditional gold jewellery — Nidhi Jain">
+          <div class="gc-img" style="background-image:url('images/bridal-downlook.jpg')"></div>
+          <div class="gc-overlay">
+            <span class="gc-label">Bridal Down Look</span>
+            <span class="gc-cat">Bridal</span>
+          </div>
+          <button class="gc-zoom" aria-label="View fullscreen">⤢</button>
+        </div>
+
+        <!-- 3: Bridal 2 front look (smiling, nose ring) -->
+        <div class="gallery-cell" data-cat="bridal"
+             data-src="images/bridal2-frontlook.jpg"
+             data-label="Bridal Glam"
+             data-desc="Radiant bridal look with statement jewellery — RD's Makeup Studio">
+          <div class="gc-img" style="background-image:url('images/bridal2-frontlook.jpg')"></div>
+          <div class="gc-overlay">
+            <span class="gc-label">Bridal Glam</span>
+            <span class="gc-cat">Bridal</span>
+          </div>
+          <button class="gc-zoom" aria-label="View fullscreen">⤢</button>
+        </div>
+
+        <!-- 4: Bridal 2 downlook -->
+        <div class="gallery-cell" data-cat="bridal"
+             data-src="images/bridal2-downlook.jpg"
+             data-label="Bridal Portrait"
+             data-desc="Full bridal look — hair, makeup, and jewellery coordination by Nidhi Jain">
+          <div class="gc-img" style="background-image:url('images/bridal2-downlook.jpg')"></div>
+          <div class="gc-overlay">
+            <span class="gc-label">Bridal Portrait</span>
+            <span class="gc-cat">Bridal</span>
+          </div>
+          <button class="gc-zoom" aria-label="View fullscreen">⤢</button>
+        </div>
+
+        <!-- 5: Party/occasion makeup -->
+        <div class="gallery-cell gallery-cell--tall" data-cat="party"
+             data-src="images/make-up.jpg"
+             data-label="Party Glam"
+             data-desc="Elegant party and occasion makeup — RD's Makeup Studio, Civil Lines">
+          <div class="gc-img" style="background-image:url('images/make-up.jpg')"></div>
+          <div class="gc-overlay">
+            <span class="gc-label">Party Glam</span>
+            <span class="gc-cat">Party</span>
+          </div>
+          <button class="gc-zoom" aria-label="View fullscreen">⤢</button>
+        </div>
+
+        <!-- 6: Summer offer promo -->
+        <div class="gallery-cell" data-cat="offer"
+             data-src="images/summer-offer.jpg"
+             data-label="Summer Offer — Flat 50% Off"
+             data-desc="Flat 50% off on all beauty & hair services. Min. ₹1,000. Call +91-8938053141">
+          <div class="gc-img" style="background-image:url('images/summer-offer.jpg')"></div>
+          <div class="gc-overlay">
+            <span class="gc-label">Flat 50% Off</span>
+            <span class="gc-cat">Offer</span>
+          </div>
+          <button class="gc-zoom" aria-label="View fullscreen">⤢</button>
+        </div>
+
+        <!-- 7: RD's logo watermark image -->
+        <div class="gallery-cell" data-cat="offer"
+             data-src="images/rd-watermark.png"
+             data-label="RD's Makeup Studio"
+             data-desc="Be Your Own Kind Of Beautiful — RD's Makeup Studio, Moradabad">
+          <div class="gc-img" style="background-image:url('images/rd-watermark.png'); background-color:#111; background-size: contain; background-repeat: no-repeat;"></div>
+          <div class="gc-overlay">
+            <span class="gc-label">RD's Studio Logo</span>
+            <span class="gc-cat">Brand</span>
+          </div>
+          <button class="gc-zoom" aria-label="View fullscreen">⤢</button>
+        </div>
+
+        <!-- VIDEO SLOT — ready for future video -->
+        <div class="gallery-cell gallery-cell--wide" data-cat="video">
+          <div class="gc-img video-coming-soon">
+            <div class="vcs-inner">
+              <div class="vcs-icon">🎬</div>
+              <p class="vcs-title">Bridal Transformation Reel</p>
+              <p class="vcs-sub">Coming soon — behind the scenes at RD's Studio</p>
+            </div>
+          </div>
+          <div class="gc-overlay">
+            <span class="gc-label">Bridal Reel</span>
+            <span class="gc-cat">Video</span>
+          </div>
+        </div>
+
+      </div><!-- /gallery-grid -->
+    </div>
+  </main>
+
+  <!-- ─── BOOKING BAND ──────────────────────────────── -->
+  <section class="booking-band">
+    <div class="container booking-band-inner">
+      <div>
+        <h3 class="bb-title">Want a look like this? <em>Book today.</em></h3>
+        <p class="bb-sub">Call or WhatsApp — bridal bookings open now.</p>
+      </div>
+      <div class="bb-actions">
+        <a href="booking.html" class="btn-primary">Book Appointment</a>
+        <a href="https://wa.me/918938053141" target="_blank" class="btn-whatsapp">💬 WhatsApp</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── FOOTER ────────────────────────────────────── -->
+  <footer class="footer">
+    <div class="container footer-inner">
+      <div class="footer-logo">
+        <span class="footer-rd logo-rd">RD's</span>
+        <span class="logo-text">Makeup Studio</span>
+      </div>
+      <p class="footer-tagline">Be Your Own Kind Of Beautiful</p>
+      <p class="footer-addr">House No. 3, Jain Mandir, Civil Lines, Moradabad · <a href="tel:+918938053141">+91 8938053141</a></p>
+      <p class="footer-copy">© 2025 RD's Makeup Studio · Nidhi Jain. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <!-- ─── LIGHTBOX ──────────────────────────────────── -->
+  <div id="lightbox" class="lightbox" role="dialog" aria-modal="true" aria-label="Image viewer">
+    <div class="lb-backdrop"></div>
+    <div class="lb-container">
+      <button class="lb-close" id="lbClose" aria-label="Close">✕</button>
+      <button class="lb-arrow lb-prev" id="lbPrev" aria-label="Previous">‹</button>
+      <button class="lb-arrow lb-next" id="lbNext" aria-label="Next">›</button>
+      <div class="lb-img-wrap">
+        <img id="lbImg" src="" alt="" class="lb-img" />
+      </div>
+      <div class="lb-caption">
+        <p class="lb-label" id="lbLabel"></p>
+        <p class="lb-desc" id="lbDesc"></p>
+        <p class="lb-counter" id="lbCounter"></p>
+      </div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+  <script src="gallery.js"></script>
+</body>
+</html>
