@@ -258,7 +258,7 @@ ul { list-style: none; }
 
 .hero-watermark-logo{
   width:min(1400px,140vw);
-  opacity:0.08;
+  opacity:0.12;
 
   filter:
     blur(2px)
