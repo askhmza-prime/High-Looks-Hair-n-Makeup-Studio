@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Book Appointment · RD's Makeup Studio</title>
+  <meta name="description" content="Book an appointment at High Looks Studio, Moradabad. Bridal, hair, skin and beauty services." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&family=DM+Sans:wght@300;400;500;600&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" href="pages.css" />
+</head>
+<body>
+
+  <!-- NAV -->
+  <header id="navbar">
+    <div class="nav-inner">
+      <a href="index.html" class="logo">
+        <span class="logo-hl">HL</span>
+        <span class="logo-text">High Looks</span>
+      </a>
+      <nav class="nav-links" id="navLinks">
+        <a href="index.html">Home</a>
+        <a href="services.html">Services</a>
+        <a href="gallery.html">Gallery</a>
+        <a href="booking.html" class="nav-active-page">Booking</a>
+        <a href="tel:+919971205182" class="nav-cta">Call Now</a>
+      </nav>
+      <button class="hamburger" id="hamburger" aria-label="Toggle menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <!-- PAGE HERO -->
+  <section class="page-hero page-hero--short">
+    <div class="ph-bg">
+      <div class="hero-orb orb1"></div>
+      <div class="hero-orb orb2"></div>
+    </div>
+    <div class="ph-content container">
+      <p class="hero-eyebrow">Reserve Your Slot</p>
+      <h1 class="ph-title">Book an <em>Appointment</em></h1>
+      <p class="ph-sub">Fill the form below and we'll confirm your slot within an hour.</p>
+    </div>
+  </section>
+
+  <!-- MAIN -->
+  <main class="section">
+    <div class="container booking-layout">
+
+      <!-- ── FORM SIDE ───────────────────────────── -->
+      <div class="booking-form-wrap">
+
+        <!-- SUCCESS STATE (hidden by default) -->
+        <div class="form-success" id="formSuccess" aria-live="polite" hidden>
+          <div class="success-icon">✦</div>
+          <h3>Booking Request Sent!</h3>
+          <p>Thank you — we'll confirm your appointment via WhatsApp or call within the hour.</p>
+          <a href="index.html" class="btn-primary" style="margin-top:24px;">Back to Home</a>
+        </div>
+
+        <!-- FORM -->
+        <!--
+          HOW TO ACTIVATE THIS FORM:
+          1. Go to https://formspree.io and create a FREE account
+          2. Create a new form → copy your unique form ID (e.g. xpwznbkq)
+          3. Replace YOUR_FORMSPREE_ID below with your actual ID
+          4. Done — submissions land in your email inbox
+        -->
+        <form
+          id="bookingForm"
+          novalidate
+        >
+          <h2 class="form-heading">Your Details</h2>
+
+          <div class="form-row">
+            <div class="form-group">
+              <label for="name">Full Name <span class="req">*</span></label>
+              <input type="text" id="name" name="name" placeholder="e.g. Priya Sharma" required autocomplete="name" />
+              <span class="field-error" id="nameErr"></span>
+            </div>
+            <div class="form-group">
+              <label for="phone">Phone / WhatsApp <span class="req">*</span></label>
+              <input type="tel" id="phone" name="phone" placeholder="e.g. 9876543210" required autocomplete="tel" pattern="[0-9]{10}" />
+              <span class="field-error" id="phoneErr"></span>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="email">Email Address <span class="optional">(optional)</span></label>
+            <input type="email" id="email" name="email" placeholder="yourname@email.com" autocomplete="email" />
+          </div>
+
+          <div class="form-divider-label">Service &amp; Timing</div>
+
+          <div class="form-group">
+            <label for="service">Service Required <span class="req">*</span></label>
+            <div class="select-wrap">
+              <select id="service" name="service" required>
+                <option value="" disabled selected>Select a service…</option>
+                <optgroup label="Bridal &amp; Wedding">
+                  <option>Full Bridal Makeup</option>
+                  <option>Pre-Bridal Package</option>
+                  <option>Bridal Hair Styling</option>
+                  <option>Makeup Trial Session</option>
+                  <option>Mobile Bridal Service</option>
+                </optgroup>
+                <optgroup label="Makeup">
+                  <option>Party Makeup</option>
+                  <option>Engagement Makeup</option>
+                  <option>Everyday Natural Makeup</option>
+                  <option>HD / Airbrush Makeup</option>
+                </optgroup>
+                <optgroup label="Hair">
+                  <option>Haircut &amp; Trim</option>
+                  <option>Blow Dry &amp; Finish</option>
+                  <option>Balayage</option>
+                  <option>Hair Extensions</option>
+                  <option>Box Braids &amp; Braiding</option>
+                  <option>Shampoo &amp; Conditioning</option>
+                </optgroup>
+                <optgroup label="Skin &amp; Facials">
+                  <option>Deep Cleansing Facial</option>
+                  <option>Brightening Facial</option>
+                  <option>Acne Treatment</option>
+                  <option>Tanning</option>
+                </optgroup>
+                <optgroup label="Nails, Spa &amp; Body">
+                  <option>Manicure</option>
+                  <option>Pedicure</option>
+                  <option>Full Body Waxing</option>
+                  <option>Eyebrow Threading</option>
+                  <option>Eyelash Services</option>
+                  <option>Massage &amp; Spa</option>
+                </optgroup>
+              </select>
+              <span class="select-arrow">▾</span>
+            </div>
+            <span class="field-error" id="serviceErr"></span>
+          </div>
+
+          <div class="form-row">
+            <div class="form-group">
+              <label for="date">Preferred Date <span class="req">*</span></label>
+              <input type="date" id="date" name="date" required />
+              <span class="field-error" id="dateErr"></span>
+            </div>
+            <div class="form-group">
+              <label for="time">Preferred Time <span class="req">*</span></label>
+              <div class="select-wrap">
+                <select id="time" name="time" required>
+                  <option value="" disabled selected>Select time…</option>
+                  <option>10:00 AM</option>
+                  <option>11:00 AM</option>
+                  <option>12:00 PM</option>
+                  <option>1:00 PM</option>
+                  <option>2:00 PM</option>
+                  <option>3:00 PM</option>
+                  <option>4:00 PM</option>
+                  <option>5:00 PM</option>
+                  <option>6:00 PM</option>
+                  <option>7:00 PM</option>
+                  <option>8:00 PM</option>
+                </select>
+                <span class="select-arrow">▾</span>
+              </div>
+              <span class="field-error" id="timeErr"></span>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="message">Additional Notes <span class="optional">(optional)</span></label>
+            <textarea id="message" name="message" rows="4" placeholder="E.g. bridal look reference, outfit colour, any skin concerns…"></textarea>
+          </div>
+
+          <!-- Honeypot anti-spam field (hidden) -->
+          <input type="text" name="_gotcha" style="display:none" tabindex="-1" autocomplete="off" />
+
+          <button type="submit" class="btn-submit" id="submitBtn">
+            <span class="btn-label">Send Booking Request</span>
+            <span class="btn-spinner" hidden>
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                <path d="M12 2v4M12 18v4M4.93 4.93l2.83 2.83M16.24 16.24l2.83 2.83M2 12h4M18 12h4M4.93 19.07l2.83-2.83M16.24 7.76l2.83-2.83"/>
+              </svg>
+            </span>
+          </button>
+
+          <p class="form-note">We confirm via WhatsApp/call. Studio hours: 10 AM – 9 PM, 7 days a week.</p>
+        </form>
+
+      </div>
+
+      <!-- ── INFO SIDE ───────────────────────────── -->
+      <aside class="booking-info">
+
+        <div class="bi-card">
+          <h3 class="bi-title">Studio Info</h3>
+          <div class="bi-items">
+            <div class="bi-item">
+              <span class="bi-icon">📍</span>
+              <div>
+                <p class="bi-label">Address</p>
+                <p>A 131, Jigar Colony<br/>Moradabad, UP 244001</p>
+              </div>
+            </div>
+            <div class="bi-item">
+              <span class="bi-icon">📞</span>
+              <div>
+                <p class="bi-label">Phone</p>
+                <a href="tel:+919971205182">+91 9971205182</a>
+              </div>
+            </div>
+            <div class="bi-item">
+              <span class="bi-icon">🕐</span>
+              <div>
+                <p class="bi-label">Hours</p>
+                <p>Mon – Sun · 10 AM – 9 PM</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="bi-card">
+          <h3 class="bi-title">Quick Contact</h3>
+          <div class="quick-btns">
+            <a href="tel:+919971205182" class="btn-primary" style="width:100%;text-align:center;">📞 Call Us</a>
+            <a href="https://wa.me/919971205182?text=Hi!%20I'd%20like%20to%20book%20an%20appointment%20at%20High%20Looks%20Studio." target="_blank" class="btn-whatsapp" style="width:100%;text-align:center;">💬 WhatsApp</a>
+          </div>
+        </div>
+
+        <div class="bi-card bi-card--ratings">
+          <div class="bir-stars">★★★★★</div>
+          <p class="bir-score">5.0 out of 5</p>
+          <p class="bir-count">Based on 25 Google Reviews</p>
+          <blockquote class="bir-quote">"Very good style of dealing with the customers and highly efficient in work."</blockquote>
+        </div>
+
+      </aside>
+
+    </div>
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container footer-inner">
+      <div class="footer-logo">
+        <span class="logo-hl">HL</span>
+        <span class="logo-text">High Looks</span>
+      </div>
+      <p class="footer-tagline">Hair · Makeup · Skin · Bridal</p>
+      <p class="footer-addr">A 131, Jigar Colony, Moradabad · <a href="tel:+919971205182">+91 9971205182</a></p>
+      <p class="footer-copy">© 2025 RD's Makeup Studio · Nidhi Jain. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+  <script src="booking.js"></script>
+</body>
+</html>
