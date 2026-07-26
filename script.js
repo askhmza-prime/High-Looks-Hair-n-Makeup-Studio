@@ -108,20 +108,30 @@ revealTargets.forEach(el => revealObserver.observe(el));
 
 
 /* ── STAT COUNTER ANIMATION ──────────────────────── */
-function animateCounter(el, target, suffix = '', duration = 1600) {
+function animateCounter(el, target, suffix = "", duration = 1600) {
   const isFloat = target % 1 !== 0;
-  const start   = performance.now();
+  const start = performance.now();
 
   function step(now) {
-    const elapsed  = now - start;
-    const progress = Math.min(elapsed / duration, 1);
-    // Ease out cubic
-    const eased    = 1 - Math.pow(1 - progress, 3);
-    const current  = isFloat
-      ? (eased * target).toFixed(1)
-      : Math.round(eased * target);
-    el.textContent = current + suffix;
-    if (progress < 1) requestAnimationFrame(step);
+    const progress = Math.min((now - start) / duration, 1);
+    const eased = 1 - Math.pow(1 - progress, 3);
+
+    let value;
+
+    if (isFloat) {
+      value = (eased * target).toFixed(1);
+    } else {
+      value = Math.round(eased * target);
+    }
+
+    el.textContent = value + suffix;
+
+    if (progress < 1) {
+      requestAnimationFrame(step);
+    } else {
+      // Ensure exact final value
+      el.textContent = target.toString() + suffix;
+    }
   }
 
   requestAnimationFrame(step);
@@ -129,21 +139,34 @@ function animateCounter(el, target, suffix = '', duration = 1600) {
 
 const statsObserver = new IntersectionObserver((entries) => {
   entries.forEach(entry => {
-    if (entry.isIntersecting) {
-      const statNums = entry.target.querySelectorAll('.stat-num');
-      statNums.forEach(el => {
-        const rawText = el.textContent.trim();
-        const num     = parseFloat(rawText);
-        const suffix  = rawText.includes('+') ? '+' : '';
-        animateCounter(el, num, suffix);
-      });
-      statsObserver.unobserve(entry.target);
-    }
-  });
-}, { threshold: 0.5 });
+    if (!entry.isIntersecting) return;
 
-const heroStats = document.querySelector('.hero-stats');
-if (heroStats) statsObserver.observe(heroStats);
+    const statNums = entry.target.querySelectorAll(".stat-num");
+
+    statNums.forEach(el => {
+      const rawText = el.textContent.trim();
+
+      // Extract first numeric value
+      const match = rawText.match(/^(\d+(?:\.\d+)?)(.*)$/);
+
+      if (!match) return;
+
+      const num = parseFloat(match[1]);
+      const suffix = match[2];
+
+      animateCounter(el, num, suffix);
+    });
+
+    statsObserver.unobserve(entry.target);
+  });
+}, {
+  threshold: 0.5
+});
+
+const heroStats = document.querySelector(".hero-stats");
+if (heroStats) {
+  statsObserver.observe(heroStats);
+}
 
 
 /* ── GALLERY ITEMS: hover parallax ──────────────── */
