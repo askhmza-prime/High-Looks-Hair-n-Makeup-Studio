@@ -244,8 +244,8 @@
 
 
       /*
-         Optional: clicking the video itself does NOT
-         accidentally close the lightbox.
+         Clicking the large video itself should NOT
+         close the lightbox.
       */
 
       video.addEventListener('click', (e) => {
@@ -336,6 +336,41 @@
 
 
     /*
+       ─────────────────────────────────────────────
+       VIDEO THUMBNAIL DIRECT OPEN
+       ─────────────────────────────────────────────
+
+       The native <video> element can capture the
+       first tap on mobile before the gallery cell's
+       normal click event fires.
+
+       pointerdown fires early enough to make ANY tap
+       on the small video immediately open the
+       lightbox.
+
+       Once inside the lightbox, the newly-created
+       large video keeps its normal controls.
+    */
+
+    const thumbnailVideo = cell.querySelector('video');
+
+    if (thumbnailVideo) {
+
+      thumbnailVideo.addEventListener(
+        'pointerdown',
+        (e) => {
+
+          e.preventDefault();
+
+          e.stopPropagation();
+
+          openLightbox(idx);
+        }
+      );
+    }
+
+
+    /*
        Clicking the gallery card.
     */
 
@@ -359,6 +394,8 @@
       if (e.target.closest('video')) {
 
         e.preventDefault();
+
+        e.stopPropagation();
 
         openLightbox(idx);
 
