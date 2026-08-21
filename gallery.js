@@ -1,7 +1,7 @@
 /* ══════════════════════════════════════════════════
    RD'S MAKEUP STUDIO — gallery.js
-   Filter tabs + Image/Video Lightbox
-   Click, zoom, prev/next, keyboard, touch swipe
+   Gallery + Services Image/Video Lightbox
+   Filter tabs, zoom, prev/next, keyboard, touch
 ══════════════════════════════════════════════════ */
 
 (function () {
@@ -50,6 +50,13 @@
   /* ── LIGHTBOX ELEMENTS ─────────────────────────── */
 
   const lightbox = document.getElementById('lightbox');
+
+  /*
+     If this page doesn't have a lightbox,
+     safely stop here.
+  */
+  if (!lightbox) return;
+
   const lbImg = document.getElementById('lbImg');
   const lbLabel = document.getElementById('lbLabel');
   const lbDesc = document.getElementById('lbDesc');
@@ -57,22 +64,27 @@
   const lbClose = document.getElementById('lbClose');
   const lbPrev = document.getElementById('lbPrev');
   const lbNext = document.getElementById('lbNext');
-  const backdrop = lightbox.querySelector('.lb-backdrop');
-  const lbImgWrap = lightbox.querySelector('.lb-img-wrap');
 
+  const backdrop =
+    lightbox.querySelector('.lb-backdrop');
+
+  const lbImgWrap =
+    lightbox.querySelector('.lb-img-wrap');
+
+
+  /* ── LIGHTBOX MEDIA ───────────────────────────── */
 
   /*
-     Every gallery cell that has data-src can now
-     become part of the lightbox.
-
-     This includes:
-       - Images
-       - Videos
+     Gallery images/videos AND Services images
+     can now use the same lightbox.
   */
 
   const lbCells = Array.from(
-    document.querySelectorAll('.gallery-cell[data-src]')
+    document.querySelectorAll(
+      '.gallery-cell[data-src], .svc-img-slot[data-src]'
+    )
   );
+
 
   let currentIndex = 0;
   let isOpen = false;
@@ -83,17 +95,23 @@
 
   function openLightbox(index) {
 
+    if (!lbCells[index]) return;
+
     currentIndex = index;
 
     renderLightbox();
 
     lightbox.classList.add('lb-open');
 
+    lightbox.setAttribute('aria-hidden', 'false');
+
     document.body.style.overflow = 'hidden';
 
     isOpen = true;
 
-    lbClose.focus();
+    if (lbClose) {
+      lbClose.focus();
+    }
   }
 
 
@@ -101,9 +119,7 @@
 
   function closeLightbox() {
 
-    /*
-       Stop video completely when closing.
-    */
+    /* Stop active video */
 
     if (activeVideo) {
 
@@ -117,20 +133,21 @@
     }
 
 
-    /*
-       Clear image.
-    */
+    /* Clear image */
 
-    lbImg.src = '';
+    if (lbImg) {
 
-    lbImg.style.display = 'none';
+      lbImg.src = '';
+
+      lbImg.style.display = 'none';
+    }
 
 
-    /*
-       Close UI.
-    */
+    /* Close UI */
 
     lightbox.classList.remove('lb-open');
+
+    lightbox.setAttribute('aria-hidden', 'true');
 
     document.body.style.overflow = '';
 
@@ -147,18 +164,20 @@
     if (!cell) return;
 
 
-    const src = cell.dataset.src || '';
+    const src =
+      cell.dataset.src || '';
 
-    const label = cell.dataset.label || '';
+    const label =
+      cell.dataset.label || '';
 
-    const desc = cell.dataset.desc || '';
+    const desc =
+      cell.dataset.desc || '';
 
-    const type = cell.dataset.type || 'image';
+    const type =
+      cell.dataset.type || 'image';
 
 
-    /*
-       Stop previous video.
-    */
+    /* Stop previous video */
 
     if (activeVideo) {
 
@@ -172,20 +191,24 @@
     }
 
 
-    /*
-       Hide image by default.
-    */
+    /* Hide image by default */
 
-    lbImg.style.display = 'none';
+    if (lbImg) {
 
-    lbImg.src = '';
+      lbImg.style.display = 'none';
+
+      lbImg.src = '';
+    }
 
 
-    /* ── VIDEO ───────────────────────────────────── */
+    /* ══════════════════════════════════════════════
+       VIDEO
+    ══════════════════════════════════════════════ */
 
     if (type === 'video') {
 
-      const video = document.createElement('video');
+      const video =
+        document.createElement('video');
 
       video.className = 'lb-video';
 
@@ -197,9 +220,15 @@
 
       video.preload = 'metadata';
 
-      video.setAttribute('playsinline', '');
+      video.setAttribute(
+        'playsinline',
+        ''
+      );
 
-      video.setAttribute('webkit-playsinline', '');
+      video.setAttribute(
+        'webkit-playsinline',
+        ''
+      );
 
       video.setAttribute(
         'aria-label',
@@ -208,18 +237,39 @@
 
 
       /*
-         Prevent lightbox swipe gestures from
-         interfering with video controls.
+         Don't let gallery swipe interfere
+         with the video's controls.
       */
 
-      video.addEventListener('touchstart', (e) => {
-        e.stopPropagation();
-      }, { passive: true });
+      video.addEventListener(
+        'touchstart',
+        (e) => {
+          e.stopPropagation();
+        },
+        { passive: true }
+      );
 
 
-      video.addEventListener('touchend', (e) => {
-        e.stopPropagation();
-      }, { passive: true });
+      video.addEventListener(
+        'touchend',
+        (e) => {
+          e.stopPropagation();
+        },
+        { passive: true }
+      );
+
+
+      /*
+         Prevent clicks inside the large video
+         from closing the lightbox.
+      */
+
+      video.addEventListener(
+        'click',
+        (e) => {
+          e.stopPropagation();
+        }
+      );
 
 
       lbImgWrap.appendChild(video);
@@ -227,9 +277,7 @@
       activeVideo = video;
 
 
-      /*
-         Fade video in.
-      */
+      /* Fade video in */
 
       video.style.opacity = '0';
 
@@ -242,23 +290,16 @@
 
       });
 
-
-      /*
-         Clicking the large video itself should NOT
-         close the lightbox.
-      */
-
-      video.addEventListener('click', (e) => {
-        e.stopPropagation();
-      });
-
-
     }
 
 
-    /* ── IMAGE ───────────────────────────────────── */
+    /* ══════════════════════════════════════════════
+       IMAGE
+    ══════════════════════════════════════════════ */
 
     else {
+
+      if (!lbImg) return;
 
       lbImg.style.display = 'block';
 
@@ -268,35 +309,52 @@
 
       lbImg.alt = label;
 
+
       lbImg.onload = () => {
 
         lbImg.style.transition =
           'opacity 0.25s ease';
 
         lbImg.style.opacity = '1';
+
       };
     }
 
 
     /* ── CAPTION ─────────────────────────────────── */
 
-    lbLabel.textContent = label;
+    if (lbLabel) {
+      lbLabel.textContent = label;
+    }
 
-    lbDesc.textContent = desc;
+    if (lbDesc) {
+      lbDesc.textContent = desc;
+    }
 
-    lbCounter.textContent =
-      `${currentIndex + 1} / ${lbCells.length}`;
+    if (lbCounter) {
+
+      lbCounter.textContent =
+        `${currentIndex + 1} / ${lbCells.length}`;
+    }
 
 
     /* ── ARROW VISIBILITY ────────────────────────── */
 
-    lbPrev.style.opacity =
-      currentIndex === 0 ? '0.3' : '1';
+    if (lbPrev) {
 
-    lbNext.style.opacity =
-      currentIndex === lbCells.length - 1
-        ? '0.3'
-        : '1';
+      lbPrev.style.opacity =
+        currentIndex === 0
+          ? '0.3'
+          : '1';
+    }
+
+    if (lbNext) {
+
+      lbNext.style.opacity =
+        currentIndex === lbCells.length - 1
+          ? '0.3'
+          : '1';
+    }
   }
 
 
@@ -317,7 +375,10 @@
 
   function showNext() {
 
-    if (currentIndex < lbCells.length - 1) {
+    if (
+      currentIndex <
+      lbCells.length - 1
+    ) {
 
       currentIndex++;
 
@@ -326,33 +387,107 @@
   }
 
 
-  /* ── OPEN GALLERY ITEMS ────────────────────────── */
+  /* ── OPEN GALLERY + SERVICES ITEMS ─────────────── */
 
-  cells.forEach(cell => {
-
-    if (!cell.dataset.src) return;
-
-    const idx = lbCells.indexOf(cell);
-
+  lbCells.forEach((cell, idx) => {
 
     /*
-       ─────────────────────────────────────────────
-       VIDEO THUMBNAIL DIRECT OPEN
-       ─────────────────────────────────────────────
-
-       The native <video> element can capture the
-       first tap on mobile before the gallery cell's
-       normal click event fires.
-
-       pointerdown fires early enough to make ANY tap
-       on the small video immediately open the
-       lightbox.
-
-       Once inside the lightbox, the newly-created
-       large video keeps its normal controls.
+       Services images are .svc-img-slot.
+       Gallery items are .gallery-cell.
     */
 
-    const thumbnailVideo = cell.querySelector('video');
+    const isServiceImage =
+      cell.classList.contains('svc-img-slot');
+
+
+    /* ── Services image ─────────────────────────── */
+
+    if (isServiceImage) {
+
+      cell.addEventListener(
+        'click',
+        (e) => {
+
+          e.preventDefault();
+
+          openLightbox(idx);
+        }
+      );
+
+
+      /*
+         Keyboard support:
+         Enter or Space opens image.
+      */
+
+      cell.addEventListener(
+        'keydown',
+        (e) => {
+
+          if (
+            e.key === 'Enter' ||
+            e.key === ' '
+          ) {
+
+            e.preventDefault();
+
+            openLightbox(idx);
+          }
+        }
+      );
+
+      return;
+    }
+
+
+    /* ── Gallery item ───────────────────────────── */
+
+    cell.addEventListener(
+      'click',
+      (e) => {
+
+        /*
+           Don't trigger lightbox twice from
+           the small zoom button.
+        */
+
+        if (
+          e.target.closest('.gc-zoom')
+        ) {
+          return;
+        }
+
+
+        /*
+           Small gallery video:
+           tapping anywhere immediately opens
+           the large video lightbox.
+        */
+
+        if (
+          e.target.closest('video')
+        ) {
+
+          e.preventDefault();
+
+          e.stopPropagation();
+
+          openLightbox(idx);
+
+          return;
+        }
+
+
+        openLightbox(idx);
+      }
+    );
+
+
+    /* ── Gallery video direct touch ──────────────── */
+
+    const thumbnailVideo =
+      cell.querySelector('video');
+
 
     if (thumbnailVideo) {
 
@@ -370,58 +505,25 @@
     }
 
 
-    /*
-       Clicking the gallery card.
-    */
-
-    cell.addEventListener('click', (e) => {
-
-      /*
-         Don't trigger lightbox from the small
-         zoom button twice.
-      */
-
-      if (e.target.closest('.gc-zoom')) {
-        return;
-      }
-
-
-      /*
-         If clicking directly on the small video,
-         open the large video lightbox.
-      */
-
-      if (e.target.closest('video')) {
-
-        e.preventDefault();
-
-        e.stopPropagation();
-
-        openLightbox(idx);
-
-        return;
-      }
-
-
-      openLightbox(idx);
-    });
-
-
-    /* ── ZOOM BUTTON ─────────────────────────────── */
+    /* ── Zoom button ────────────────────────────── */
 
     const zoomBtn =
       cell.querySelector('.gc-zoom');
 
+
     if (zoomBtn) {
 
-      zoomBtn.addEventListener('click', (e) => {
+      zoomBtn.addEventListener(
+        'click',
+        (e) => {
 
-        e.preventDefault();
+          e.preventDefault();
 
-        e.stopPropagation();
+          e.stopPropagation();
 
-        openLightbox(idx);
-      });
+          openLightbox(idx);
+        }
+      );
     }
 
   });
@@ -429,66 +531,91 @@
 
   /* ── LIGHTBOX CONTROLS ────────────────────────── */
 
-  lbClose.addEventListener(
-    'click',
-    closeLightbox
-  );
+  if (lbClose) {
+
+    lbClose.addEventListener(
+      'click',
+      closeLightbox
+    );
+  }
 
 
-  backdrop.addEventListener(
-    'click',
-    closeLightbox
-  );
+  if (backdrop) {
+
+    backdrop.addEventListener(
+      'click',
+      closeLightbox
+    );
+  }
 
 
-  lbPrev.addEventListener(
-    'click',
-    (e) => {
-      e.stopPropagation();
-      showPrev();
-    }
-  );
+  if (lbPrev) {
+
+    lbPrev.addEventListener(
+      'click',
+      (e) => {
+
+        e.stopPropagation();
+
+        showPrev();
+      }
+    );
+  }
 
 
-  lbNext.addEventListener(
-    'click',
-    (e) => {
-      e.stopPropagation();
-      showNext();
-    }
-  );
+  if (lbNext) {
+
+    lbNext.addEventListener(
+      'click',
+      (e) => {
+
+        e.stopPropagation();
+
+        showNext();
+      }
+    );
+  }
 
 
   /* ── KEYBOARD ──────────────────────────────────── */
 
-  document.addEventListener('keydown', (e) => {
+  document.addEventListener(
+    'keydown',
+    (e) => {
 
-    if (!isOpen) return;
+      if (!isOpen) return;
 
 
-    if (e.key === 'Escape') {
+      /* Escape */
 
-      closeLightbox();
+      if (e.key === 'Escape') {
 
-      return;
+        closeLightbox();
+
+        return;
+      }
+
+
+      /* Previous */
+
+      if (e.key === 'ArrowLeft') {
+
+        showPrev();
+
+        return;
+      }
+
+
+      /* Next */
+
+      if (e.key === 'ArrowRight') {
+
+        showNext();
+
+        return;
+      }
     }
-
-
-    if (e.key === 'ArrowLeft') {
-
-      showPrev();
-
-      return;
-    }
-
-
-    if (e.key === 'ArrowRight') {
-
-      showNext();
-
-      return;
-    }
-  });
+  );
 
 
   /* ── TOUCH SWIPE ───────────────────────────────── */
@@ -502,17 +629,24 @@
     (e) => {
 
       /*
-         Don't start gallery swipe when interacting
-         with video controls.
+         Don't start gallery swipe when
+         interacting with a video.
       */
 
-      if (e.target.closest('video')) {
+      if (
+        e.target.closest('video')
+      ) {
         return;
       }
 
-      touchStartX = e.touches[0].clientX;
 
-      touchStartY = e.touches[0].clientY;
+      if (!e.touches.length) return;
+
+      touchStartX =
+        e.touches[0].clientX;
+
+      touchStartY =
+        e.touches[0].clientY;
 
     },
     { passive: true }
@@ -523,9 +657,15 @@
     'touchend',
     (e) => {
 
-      if (e.target.closest('video')) {
+      if (
+        e.target.closest('video')
+      ) {
         return;
       }
+
+
+      if (!e.changedTouches.length) return;
+
 
       const diffX =
         touchStartX -
@@ -537,8 +677,8 @@
 
 
       /*
-         Only treat mostly-horizontal movement
-         as a gallery swipe.
+         Only horizontal movement counts
+         as gallery navigation.
       */
 
       if (
