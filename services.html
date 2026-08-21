@@ -11,6 +11,7 @@
   <link rel="stylesheet" href="styles.css" />
   <link rel="stylesheet" href="pages.css" />
 </head>
+
 <body>
 
   <!-- NAV -->
@@ -20,6 +21,7 @@
         <span class="logo-hl">RD's</span>
         <span class="logo-text">Makeup Studio</span>
       </a>
+
       <nav class="nav-links" id="navLinks">
         <a href="index.html">Home</a>
         <a href="services.html" class="nav-active-page">Services</a>
@@ -27,11 +29,13 @@
         <a href="booking.html">Booking</a>
         <a href="tel:+918938053141" class="nav-cta">Call Now</a>
       </nav>
+
       <button class="hamburger" id="hamburger" aria-label="Toggle menu">
         <span></span><span></span><span></span>
       </button>
     </div>
   </header>
+
 
   <!-- PAGE HERO -->
   <section class="page-hero">
@@ -39,236 +43,568 @@
       <div class="hero-orb orb1"></div>
       <div class="hero-orb orb2"></div>
     </div>
+
     <div class="ph-content container">
       <p class="hero-eyebrow">What We Offer</p>
-      <h1 class="ph-title">Our <em>Services</em></h1>
-      <p class="ph-sub">Every treatment crafted with premium products, skilled hands, and ten years of expertise.</p>
+
+      <h1 class="ph-title">
+        Our <em>Services</em>
+      </h1>
+
+      <p class="ph-sub">
+        Every treatment crafted with premium products, skilled hands, and ten years of expertise.
+      </p>
     </div>
   </section>
+
 
   <!-- SERVICE CATEGORIES -->
   <main class="section">
     <div class="container">
 
-      <!-- BRIDAL -->
+
+      <!-- ═══════════════════════════════════════════
+           BRIDAL
+      ═══════════════════════════════════════════ -->
+
       <div class="svc-category" id="bridal">
+
         <div class="svc-cat-header">
           <div class="svc-cat-icon">👰</div>
+
           <div>
             <p class="section-eyebrow">Most Popular</p>
             <h2 class="section-title">Bridal &amp; Wedding</h2>
           </div>
+
           <span class="svc-cat-badge">Premium</span>
         </div>
+
+
         <!-- Bridal service image -->
-        <div class="svc-img-slot" data-slot="bridal">
-          <img src="images/bridal.jpg" alt="Bridal makeup by RD's Makeup Studio" />
+        <div
+          class="svc-img-slot"
+          data-slot="bridal"
+          data-src="images/bridal.jpg"
+          data-type="image"
+          data-label="Bridal & Wedding"
+          data-desc="Bridal makeup by RD's Makeup Studio, Civil Lines, Moradabad."
+          role="button"
+          tabindex="0"
+          aria-label="View Bridal & Wedding image"
+        >
+          <img
+            src="images/bridal.jpg"
+            alt="Bridal makeup by RD's Makeup Studio"
+          />
         </div>
+
+
         <div class="svc-items-grid">
+
           <div class="svc-item">
             <div class="si-top">
               <h4>Full Bridal Makeup</h4>
               <span class="si-tag si-tag--gold">Signature</span>
             </div>
-            <p>Complete bridal look — base, eyes, lips, contouring with airbrush finish and long-lasting setting.</p>
+            <p>
+              Complete bridal look — base, eyes, lips, contouring with airbrush finish and long-lasting setting.
+            </p>
           </div>
+
           <div class="svc-item">
-            <div class="si-top"><h4>Pre-Bridal Package</h4></div>
-            <p>3-session skin prep: cleanup, brightening facial, and threading — scheduled across the week before your wedding.</p>
+            <div class="si-top">
+              <h4>Pre-Bridal Package</h4>
+            </div>
+            <p>
+              3-session skin prep: cleanup, brightening facial, and threading — scheduled across the week before your wedding.
+            </p>
           </div>
+
           <div class="svc-item">
-            <div class="si-top"><h4>Bridal Hair Styling</h4></div>
-            <p>Updo, bun, open curls, or braided styles customised to your outfit and face shape.</p>
+            <div class="si-top">
+              <h4>Bridal Hair Styling</h4>
+            </div>
+            <p>
+              Updo, bun, open curls, or braided styles customised to your outfit and face shape.
+            </p>
           </div>
+
           <div class="svc-item">
-            <div class="si-top"><h4>Makeup Trial Session</h4></div>
-            <p>Full trial run of your bridal look — rehearse the style, colours, and setting before the big day.</p>
+            <div class="si-top">
+              <h4>Makeup Trial Session</h4>
+            </div>
+            <p>
+              Full trial run of your bridal look — rehearse the style, colours, and setting before the big day.
+            </p>
           </div>
+
           <div class="svc-item">
-            <div class="si-top"><h4>Bridesmaid Makeup</h4></div>
-            <p>Coordinated makeup for bridesmaids and family members — group bookings available.</p>
+            <div class="si-top">
+              <h4>Bridesmaid Makeup</h4>
+            </div>
+            <p>
+              Coordinated makeup for bridesmaids and family members — group bookings available.
+            </p>
           </div>
+
           <div class="svc-item">
-            <div class="si-top"><h4>Mobile Bridal Service</h4></div>
-            <p>We travel to your home or venue on the wedding day — no need to leave the preparation suite.</p>
+            <div class="si-top">
+              <h4>Mobile Bridal Service</h4>
+            </div>
+            <p>
+              We travel to your home or venue on the wedding day — no need to leave the preparation suite.
+            </p>
           </div>
+
         </div>
       </div>
 
+
       <div class="svc-divider"></div>
 
-      <!-- MAKEUP -->
+
+      <!-- ═══════════════════════════════════════════
+           MAKEUP
+      ═══════════════════════════════════════════ -->
+
       <div class="svc-category" id="makeup">
+
         <div class="svc-cat-header">
           <div class="svc-cat-icon">💄</div>
+
           <div>
             <h2 class="section-title">Makeup Services</h2>
           </div>
         </div>
+
+
         <div class="svc-items-grid">
+
           <div class="svc-item">
-            <div class="si-top"><h4>Party Makeup</h4></div>
-            <p>Glamorous, long-lasting looks for receptions, sangeet, birthdays, and evening events.</p>
+            <div class="si-top">
+              <h4>Party Makeup</h4>
+            </div>
+            <p>
+              Glamorous, long-lasting looks for receptions, sangeet, birthdays, and evening events.
+            </p>
           </div>
+
           <div class="svc-item">
-            <div class="si-top"><h4>Engagement Makeup</h4></div>
-            <p>Soft glam to bold elegance — we tailor the look to your outfit and photographer's lighting.</p>
+            <div class="si-top">
+              <h4>Engagement Makeup</h4>
+            </div>
+            <p>
+              Soft glam to bold elegance — we tailor the look to your outfit and photographer's lighting.
+            </p>
           </div>
+
           <div class="svc-item">
-            <div class="si-top"><h4>Everyday Natural Makeup</h4></div>
-            <p>Light, fresh finish for office, casual outings, or family occasions.</p>
+            <div class="si-top">
+              <h4>Everyday Natural Makeup</h4>
+            </div>
+            <p>
+              Light, fresh finish for office, casual outings, or family occasions.
+            </p>
           </div>
+
           <div class="svc-item">
-            <div class="si-top"><h4>HD / Airbrush Makeup</h4></div>
-            <p>Flawless, camera-ready skin with airbrush technology — perfect for shoots and high-definition photography.</p>
+            <div class="si-top">
+              <h4>HD / Airbrush Makeup</h4>
+            </div>
+            <p>
+              Flawless, camera-ready skin with airbrush technology — perfect for shoots and high-definition photography.
+            </p>
           </div>
+
         </div>
       </div>
 
+
       <div class="svc-divider"></div>
 
-      <!-- HAIR -->
+
+      <!-- ═══════════════════════════════════════════
+           HAIR
+      ═══════════════════════════════════════════ -->
+
       <div class="svc-category" id="hair">
+
         <div class="svc-cat-header">
           <div class="svc-cat-icon">💇</div>
+
           <div>
             <h2 class="section-title">Hair Styling &amp; Colour</h2>
           </div>
         </div>
+
+
         <!-- Hair service image -->
-        <div class="svc-img-slot" data-slot="hair">
-          <img src="images/hair-straight.jpg" alt="Hair styling and transformation by RD's Makeup Studio" />
+        <div
+          class="svc-img-slot"
+          data-slot="hair"
+          data-src="images/hair-straight.jpg"
+          data-type="image"
+          data-label="Hair Styling & Colour"
+          data-desc="Professional hair styling and transformation by RD's Makeup Studio."
+          role="button"
+          tabindex="0"
+          aria-label="View Hair Styling and Colour image"
+        >
+          <img
+            src="images/hair-straight.jpg"
+            alt="Hair styling and transformation by RD's Makeup Studio"
+          />
         </div>
+
+
         <div class="svc-items-grid">
+
           <div class="svc-item">
-            <div class="si-top"><h4>Haircut &amp; Trim</h4></div>
-            <p>Precision cuts — layers, blunt, U-cut, V-cut — styled to your face shape and lifestyle.</p>
+            <div class="si-top">
+              <h4>Haircut &amp; Trim</h4>
+            </div>
+            <p>
+              Precision cuts — layers, blunt, U-cut, V-cut — styled to your face shape and lifestyle.
+            </p>
           </div>
+
           <div class="svc-item">
-            <div class="si-top"><h4>Blow Dry &amp; Finish</h4></div>
-            <p>Volumising blow-out, sleek straight, or bouncy waves — long-lasting finish with heat protection.</p>
+            <div class="si-top">
+              <h4>Blow Dry &amp; Finish</h4>
+            </div>
+            <p>
+              Volumising blow-out, sleek straight, or bouncy waves — long-lasting finish with heat protection.
+            </p>
           </div>
+
           <div class="svc-item">
-            <div class="si-top"><h4>Balayage</h4></div>
-            <p>Hand-painted colour for a sun-kissed, natural gradient — fully customised to your base shade.</p>
+            <div class="si-top">
+              <h4>Balayage</h4>
+            </div>
+            <p>
+              Hand-painted colour for a sun-kissed, natural gradient — fully customised to your base shade.
+            </p>
           </div>
+
           <div class="svc-item">
-            <div class="si-top"><h4>Hair Extensions</h4></div>
-            <p>Length and volume additions — clip-in and bonded options matched to your natural colour.</p>
+            <div class="si-top">
+              <h4>Hair Extensions</h4>
+            </div>
+            <p>
+              Length and volume additions — clip-in and bonded options matched to your natural colour.
+            </p>
           </div>
+
           <div class="svc-item">
-            <div class="si-top"><h4>Box Braids &amp; Braiding</h4></div>
-            <p>Protective and decorative braiding styles — box braids, cornrows, rope braids and more.</p>
+            <div class="si-top">
+              <h4>Box Braids &amp; Braiding</h4>
+            </div>
+            <p>
+              Protective and decorative braiding styles — box braids, cornrows, rope braids and more.
+            </p>
           </div>
+
           <div class="svc-item">
-            <div class="si-top"><h4>Shampoo &amp; Conditioning</h4></div>
-            <p>Deep cleanse with scalp massage, conditioning mask, and professional blow-dry finish.</p>
+            <div class="si-top">
+              <h4>Shampoo &amp; Conditioning</h4>
+            </div>
+            <p>
+              Deep cleanse with scalp massage, conditioning mask, and professional blow-dry finish.
+            </p>
           </div>
+
         </div>
       </div>
 
+
       <div class="svc-divider"></div>
 
-      <!-- SKIN -->
+
+      <!-- ═══════════════════════════════════════════
+           SKIN
+      ═══════════════════════════════════════════ -->
+
       <div class="svc-category" id="skin">
+
         <div class="svc-cat-header">
           <div class="svc-cat-icon">✨</div>
+
           <div>
             <h2 class="section-title">Skin &amp; Facials</h2>
           </div>
         </div>
+
+
         <!-- Skin & facial service image -->
-        <div class="svc-img-slot" data-slot="skin">
-          <img src="images/make-up.jpg" alt="Beauty and skin treatment at RD's Makeup Studio" />
+        <div
+          class="svc-img-slot"
+          data-slot="skin"
+          data-src="images/make-up.jpg"
+          data-type="image"
+          data-label="Skin & Facials"
+          data-desc="Beauty and skin treatment at RD's Makeup Studio."
+          role="button"
+          tabindex="0"
+          aria-label="View Skin and Facials image"
+        >
+          <img
+            src="images/make-up.jpg"
+            alt="Beauty and skin treatment at RD's Makeup Studio"
+          />
         </div>
+
+
         <div class="svc-items-grid">
+
           <div class="svc-item">
-            <div class="si-top"><h4>Deep Cleansing Facial</h4></div>
-            <p>Thorough pore-clearing facial with steam, extractions, toning, and hydrating mask.</p>
+            <div class="si-top">
+              <h4>Deep Cleansing Facial</h4>
+            </div>
+            <p>
+              Thorough pore-clearing facial with steam, extractions, toning, and hydrating mask.
+            </p>
           </div>
+
           <div class="svc-item">
-            <div class="si-top"><h4>Brightening Facial</h4></div>
-            <p>Vitamin C–boosted brightening treatment to even skin tone and reduce dark spots.</p>
+            <div class="si-top">
+              <h4>Brightening Facial</h4>
+            </div>
+            <p>
+              Vitamin C–boosted brightening treatment to even skin tone and reduce dark spots.
+            </p>
           </div>
+
           <div class="svc-item">
-            <div class="si-top"><h4>Acne Treatment</h4></div>
-            <p>Targeted salicylic and AHA-based treatment for active breakouts and congested skin.</p>
+            <div class="si-top">
+              <h4>Acne Treatment</h4>
+            </div>
+            <p>
+              Targeted salicylic and AHA-based treatment for active breakouts and congested skin.
+            </p>
           </div>
+
           <div class="svc-item">
-            <div class="si-top"><h4>Tanning</h4></div>
-            <p>Professional self-tanning application — streak-free, golden finish that lasts 7–10 days.</p>
+            <div class="si-top">
+              <h4>Tanning</h4>
+            </div>
+            <p>
+              Professional self-tanning application — streak-free, golden finish that lasts 7–10 days.
+            </p>
           </div>
+
         </div>
       </div>
 
+
       <div class="svc-divider"></div>
 
-      <!-- NAILS & BODY -->
+
+      <!-- ═══════════════════════════════════════════
+           NAILS & BODY
+      ═══════════════════════════════════════════ -->
+
       <div class="svc-category" id="nails">
+
         <div class="svc-cat-header">
           <div class="svc-cat-icon">💅</div>
+
           <div>
             <h2 class="section-title">Nails, Spa &amp; Body</h2>
           </div>
         </div>
+
+
         <div class="svc-items-grid">
+
           <div class="svc-item">
-            <div class="si-top"><h4>Manicure</h4></div>
-            <p>Hand soak, cuticle care, shaping, buffing, and your choice of regular or gel polish.</p>
+            <div class="si-top">
+              <h4>Manicure</h4>
+            </div>
+            <p>
+              Hand soak, cuticle care, shaping, buffing, and your choice of regular or gel polish.
+            </p>
           </div>
+
           <div class="svc-item">
-            <div class="si-top"><h4>Pedicure</h4></div>
-            <p>Foot soak, scrub, callus removal, massage, and polished finish for soft, smooth feet.</p>
+            <div class="si-top">
+              <h4>Pedicure</h4>
+            </div>
+            <p>
+              Foot soak, scrub, callus removal, massage, and polished finish for soft, smooth feet.
+            </p>
           </div>
+
           <div class="svc-item">
-            <div class="si-top"><h4>Full Body Waxing</h4></div>
-            <p>Smooth, long-lasting hair removal using premium warm wax — arms, legs, underarms, full body.</p>
+            <div class="si-top">
+              <h4>Full Body Waxing</h4>
+            </div>
+            <p>
+              Smooth, long-lasting hair removal using premium warm wax — arms, legs, underarms, full body.
+            </p>
           </div>
+
           <div class="svc-item">
-            <div class="si-top"><h4>Eyebrow Threading</h4></div>
-            <p>Precise shaping to define and frame your brows — quick, clean, and long-lasting arch.</p>
+            <div class="si-top">
+              <h4>Eyebrow Threading</h4>
+            </div>
+            <p>
+              Precise shaping to define and frame your brows — quick, clean, and long-lasting arch.
+            </p>
           </div>
+
           <div class="svc-item">
-            <div class="si-top"><h4>Eyelash Services</h4></div>
-            <p>Lash tinting, lash lift, and false lash application — for dramatic or natural enhancement.</p>
+            <div class="si-top">
+              <h4>Eyelash Services</h4>
+            </div>
+            <p>
+              Lash tinting, lash lift, and false lash application — for dramatic or natural enhancement.
+            </p>
           </div>
+
           <div class="svc-item">
-            <div class="si-top"><h4>Massage &amp; Spa</h4></div>
-            <p>Full-body relaxation massage, foot massage, and holistic spa packages for total rejuvenation.</p>
+            <div class="si-top">
+              <h4>Massage &amp; Spa</h4>
+            </div>
+            <p>
+              Full-body relaxation massage, foot massage, and holistic spa packages for total rejuvenation.
+            </p>
           </div>
+
         </div>
       </div>
 
     </div>
   </main>
 
+
   <!-- BOOKING CTA BAND -->
   <section class="booking-band">
+
     <div class="container booking-band-inner">
+
       <div>
-        <h3 class="bb-title">Ready to book your <em>appointment?</em></h3>
-        <p class="bb-sub">Call, WhatsApp, or fill the online form — we'll confirm within an hour.</p>
+        <h3 class="bb-title">
+          Ready to book your <em>appointment?</em>
+        </h3>
+
+        <p class="bb-sub">
+          Call, WhatsApp, or fill the online form — we'll confirm within an hour.
+        </p>
       </div>
+
       <div class="bb-actions">
         <a href="booking.html" class="btn-primary">Book Online</a>
-        <a href="tel:+918938053141" class="btn-ghost">📞 +91 8938053141</a>
+        <a href="tel:+918938053141" class="btn-ghost">
+          📞 +91 8938053141
+        </a>
       </div>
+
     </div>
   </section>
 
+
   <!-- FOOTER -->
   <footer class="footer">
+
     <div class="container footer-inner">
+
       <div class="footer-logo">
         <span class="logo-hl">RD's</span>
         <span class="logo-text">Makeup Studio</span>
       </div>
-      <p class="footer-tagline">Hair · Makeup · Skin · Bridal</p>
-      <p class="footer-addr">House No. 3, Jain Mandir, near, Jail Rd, Civil Lines, Moradabad, Uttar Pradesh 244001 · <a href="tel:+918938053141">+91 8938053141</a></p>
-      <p class="footer-copy">© 2025 RD's Makeup Studio · Nidhi Jain. All rights reserved.</p>
+
+      <p class="footer-tagline">
+        Hair · Makeup · Skin · Bridal
+      </p>
+
+      <p class="footer-addr">
+        House No. 3, Jain Mandir, near, Jail Rd, Civil Lines, Moradabad, Uttar Pradesh 244001 ·
+        <a href="tel:+918938053141">+91 8938053141</a>
+      </p>
+
+      <p class="footer-copy">
+        © 2025 RD's Makeup Studio · Nidhi Jain. All rights reserved.
+      </p>
+
     </div>
   </footer>
 
+
+  <!-- ══════════════════════════════════════════════
+       SERVICE IMAGE LIGHTBOX
+       Uses the same structure as the Gallery.
+  ══════════════════════════════════════════════ -->
+
+  <div class="lightbox" id="lightbox" aria-hidden="true">
+
+    <div class="lb-backdrop"></div>
+
+    <button
+      class="lb-close"
+      id="lbClose"
+      type="button"
+      aria-label="Close image"
+    >
+      ✕
+    </button>
+
+    <button
+      class="lb-arrow lb-prev"
+      id="lbPrev"
+      type="button"
+      aria-label="Previous image"
+    >
+      ‹
+    </button>
+
+    <div class="lb-container">
+
+      <div class="lb-img-wrap">
+        <img
+          class="lb-img"
+          id="lbImg"
+          src=""
+          alt=""
+        />
+      </div>
+
+      <div class="lb-caption">
+
+        <div
+          class="lb-label"
+          id="lbLabel"
+        ></div>
+
+        <div
+          class="lb-desc"
+          id="lbDesc"
+        ></div>
+
+        <div
+          class="lb-counter"
+          id="lbCounter"
+        ></div>
+
+      </div>
+
+    </div>
+
+    <button
+      class="lb-arrow lb-next"
+      id="lbNext"
+      type="button"
+      aria-label="Next image"
+    >
+      ›
+    </button>
+
+  </div>
+
+
+  <!-- SCRIPTS -->
   <script src="script.js"></script>
+  <script src="gallery.js"></script>
+
 </body>
 </html>
