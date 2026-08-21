@@ -824,3 +824,63 @@ ul { list-style: none; }
   .contact-actions a { width: 100%; text-align: center; }
   .about-badge, .about-badge-2 { position: static; margin-top: 12px; }
 }
+
+/* ══════════════════════════════════════════════════
+   FLOATING WHATSAPP BUTTON
+══════════════════════════════════════════════════ */
+
+.floating-whatsapp {
+  position: fixed;
+  right: 20px;
+  bottom: 20px;
+  width: 58px;
+  height: 58px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background: #25D366;
+  color: #fff;
+
+  border-radius: 50%;
+  text-decoration: none;
+
+  font-size: 28px;
+  line-height: 1;
+
+  box-shadow:
+    0 8px 24px rgba(0, 0, 0, 0.35),
+    0 0 0 3px rgba(37, 211, 102, 0.15);
+
+  z-index: 9999;
+
+  transition:
+    transform 0.25s ease,
+    box-shadow 0.25s ease;
+}
+
+.floating-whatsapp:hover {
+  transform: translateY(-4px) scale(1.06);
+
+  box-shadow:
+    0 12px 30px rgba(0, 0, 0, 0.4),
+    0 0 0 5px rgba(37, 211, 102, 0.15);
+}
+
+.floating-whatsapp:active {
+  transform: scale(0.94);
+}
+
+.floating-whatsapp span {
+  display: block;
+}
+
+@media (max-width: 600px) {
+  .floating-whatsapp {
+    width: 54px;
+    height: 54px;
+    right: 16px;
+    bottom: 16px;
+    font-size: 26px;
+  }
+}
