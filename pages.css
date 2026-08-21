@@ -1139,3 +1139,14 @@ input[type="date"]::-webkit-calendar-picker-indicator {
   .lb-next  { right: 8px; }
   .lb-close { top: 12px; right: 12px; }
 }
+
+/* ── SERVICES LIGHTBOX IMAGE TRIGGER ───────────── */
+
+.svc-img-slot[data-src] {
+  cursor: zoom-in;
+}
+
+.svc-img-slot[data-src]:focus-visible {
+  outline: 2px solid var(--gold);
+  outline-offset: 4px;
+}
